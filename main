@@ -1,1 +1,29 @@
+# main.py
 
+import librosa
+
+def load_audio(file_path):
+    try:
+        audio, sample_rate = librosa.load(file_path, sr=None)
+        print("Audio loaded successfully ")
+        print(f"Duration: {len(audio)/sample_rate:.2f} seconds")
+        print(f"Sample Rate: {sample_rate} Hz")
+        return audio, sample_rate
+    except Exception as e:
+        print("Error loading audio ")
+        print(e)
+
+def main():
+    print("🎧 Arabic Audio Retrieval System")
+    print("Initializing...\n")
+
+    file_path = "sample.wav"  # حط أي ملف صوت هنا
+
+    audio, sr = load_audio(file_path)
+
+    if audio is not None:
+        print("\nProcessing audio... (placeholder)")
+        print("Retrieval system will be implemented here")
+
+if __name__ == "__main__":
+    main()
